@@ -14,10 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
+         GITHUB_CONTEXT: ${{ toJson(github) }}
          EVENT_TYPE: ${{ github.event.event_type }}
          ENV: ${{ github.event.client_payload.env }}
          IMAGE: ${{ github.event.client_payload.image }}
         run: |
+          echo $GITHUB_CONTEXT
           echo $EVENT_TYPE
           echo $ENV
           echo $IMAGE
