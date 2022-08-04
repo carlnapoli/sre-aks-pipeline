@@ -19,4 +19,4 @@ curl                                             \
   -H "Accept: application/vnd.github+json"       \
   -H "Authorization: token $token"               \
   https://api.github.com/repos/carlnapoli/sre-aks-pipeline/dispatches           \
-  -d '{"event_type":"on-acr-image-push","client_payload":{"unit":false,"integration":true}}'
+  -d '{"event_type":"on-acr-image-push","client_payload":{"env": "dev", "image":"azure.acr.image.aks:latest"}}'
