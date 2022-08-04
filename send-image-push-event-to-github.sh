@@ -5,7 +5,7 @@
 # Note: Simulating ACR webhook JSON sent to Github
 # ----------------------------------------------------------------------------
 
-token=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
+token=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
 uri=https://api.github.com/orgs/repos/carlnapoli/sre-aks-pipeline/dispatches
 
 payload=$(cat <<EOF
