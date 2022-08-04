@@ -21,10 +21,13 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+      - run: 'echo "trigger: ${{ github.event.event_type }}"'
+      - run: 'echo "  image: ${{ github.event.client_payload.image }}"'
+      - run: 'echo "    env: ${{ github.event.client_payload.env }}"'
+      - run: 'echo "payload: ${{ toJson(github.event.client_payload) }}"'
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "${{ github.event.event_type }} completed"
+          echo Thank you.
