@@ -25,9 +25,3 @@ jobs:
       - run: 'echo "  image: ${{ github.event.client_payload.image }}"'
       - run: 'echo "    env: ${{ github.event.client_payload.env }}"'
       - run: 'echo "payload: ${{ toJson(github.event.client_payload) }}"'
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo "${{ github.event.event_type }} completed"
-          echo Thank you.
