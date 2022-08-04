@@ -9,19 +9,15 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  deploy-image-to-acr:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-      - run: 'echo "trigger: ${{ github.event.event_type }}"'
-      - run: 'echo "  image: ${{ github.event.client_payload.image }}"'
-      - run: 'echo "    env: ${{ github.event.client_payload.env }}"'
-      - run: 'echo "payload: ${{ toJson(github.event.client_payload) }}"'
+      - env:
+         EVENT_TYPE: ${{ github.event.event_type }}
+         ENV: ${{ github.event.client_payload.env }}
+         IMAGE: ${{ github.event.client_payload.image }}
+        run: |
+          echo $EVENT_TYPE
+          echo $ENV
+          echo $IMAGE
