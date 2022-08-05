@@ -1,10 +1,10 @@
-name: Process acr image push
+name: acr_image_push
 # This workflow is triggered on new acr image push
 on: [repository_dispatch]
 
 jobs:
   build:
-    name: Process acr image push
+    name:  acr_image_push
     runs-on: ubuntu-latest
     steps:
       # Add you custom logic below this line - example below
