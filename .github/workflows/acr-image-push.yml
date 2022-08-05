@@ -12,5 +12,3 @@ jobs:
         run: echo 'event_type:${{ github.event.event_type }} name:${{ github.event_name }}' # Will be 'acr_image_push'
       - name: Print ACR Image Push details
         run: echo 'id:${{ github.event.client_payload.acr_image_push.id }} type:${{ github.event.client_payload.acr_image_push.action }}'
-      - name: Print acr action payload as JSON
-        run: echo 'insight payload: ${{ toJson(github.event.client_payload) }}'
