@@ -1,6 +1,8 @@
 name: acr_image_push
 # This workflow is triggered on new acr image push
-on: [repository_dispatch]
+on:
+  repository_dispatch:
+    types: [acr_image_push]
 
 jobs:
   build:
