@@ -9,8 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - uses: actions/checkout@v2
-         with:
-           client-payload: ${{ toJson(github) }}
-       - run: echo ${{ github.event.client_payload }}
-
-        
+       - run: |
+           echo "ACR Webhook Recieved: [ ${{ github.event.inputs.action }} ] "
