@@ -11,5 +11,7 @@ jobs:
        - uses: actions/checkout@v2
        - run: echo '::set-output name=SELECTED_COLOR::green'
        - run: |
-           echo "ACR Webhook Recieved: [ ${{ github.client_payload.event.inputs.action }} ] "
+           echo '::set-output name=SELECTED_COLOR::green'
+           echo "ACR Webhook Recieved: [ acr::action::push ] "
            echo "${{ github.client_payload.event.inputs }}"
+           echo "${{ github.event.client_payload }}"
