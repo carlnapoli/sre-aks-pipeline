@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - uses: actions/checkout@v2
+       - run: echo '::set-output name=SELECTED_COLOR::green'
        - run: |
            echo "ACR Webhook Recieved: [ ${{ github.client_payload.event.inputs.action }} ] "
            echo "${{ github.client_payload.event.inputs }}"
