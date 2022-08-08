@@ -1,0 +1,6 @@
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'the acr action'
+        required: true
