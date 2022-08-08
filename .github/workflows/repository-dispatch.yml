@@ -8,5 +8,6 @@ jobs:
     steps:
       - uses: peter-evans/repository-dispatch@v2
         with:
-          ref: ${{ github.event.client_payload.ref }}
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          client-payload: ${{ toJson(github) }}
       - run: echo ${{ github.event.client_payload }}
