@@ -10,4 +10,4 @@ jobs:
     steps:
        - uses: actions/checkout@v2
        - run: |
-           echo "ACR Webhook Recieved: [ ${{ github.event.inputs.action }} ] "
+           echo "ACR Webhook Recieved: [ ${{ github.client_payload.event.inputs.action }} ] "
