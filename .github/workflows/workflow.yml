@@ -7,14 +7,10 @@ on:
 jobs:
   myEvent:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_CONTEXT: ${{ toJson(github) }}    
     steps:
-       - uses: actions/checkout@v2
        - name: Dump GitHub context
-         env:
-            GITHUB_CONTEXT: ${{ toJson(github) }}
        - run: |
-           echo "$GITHUB_CONTEXT"
-           echo '::set-output name=SELECTED_COLOR::green'
-           echo "ACR Webhook Recieved: [ acr::action::push ] "
-           echo "${{ github.client_payload.event.inputs }}"
-           echo "${{ github.event.client_payload }}"
+           echo '${{ toJSON(github) }}'
+           echo 'ACR Webhook Recieved: [ acr::action::push ] '
