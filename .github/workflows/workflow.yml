@@ -5,9 +5,10 @@ on:
         description: 'Consume ACR Webhook Action'
         required: true
 jobs:
-  myEvent:
+  acrImagePush:
     runs-on: ubuntu-latest 
     steps:
        - run: |
+           echo 'Consume ACR Webhook Action: Forward to David's Helm Deployment Workflow'
            echo '${{ toJSON(github) }}'
            echo 'ACR Webhook Recieved: [ acr::action::push ] '
