@@ -6,11 +6,8 @@ on:
         required: true
 jobs:
   myEvent:
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_CONTEXT: ${{ toJson(github) }}    
+    runs-on: ubuntu-latest 
     steps:
-       - name: Dump GitHub context
        - run: |
            echo '${{ toJSON(github) }}'
            echo 'ACR Webhook Recieved: [ acr::action::push ] '
