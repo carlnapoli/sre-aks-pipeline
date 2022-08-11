@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'the acr action'
+        description: 'Consume ACR Webhook Action'
         required: true
 jobs:
   myEvent:
